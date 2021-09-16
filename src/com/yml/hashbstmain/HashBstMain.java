@@ -1,12 +1,14 @@
 package com.yml.hashbstmain;
 
 import com.yml.hashmap.HashMap;
+import com.yml.hashmap.LinkedHashMap;
 
 public class HashBstMain {
     public static void main(String args[]) {
-        HashMap<String, Integer> wordCount = new HashMap<String, Integer>();
+        LinkedHashMap<String, Integer> wordCount = new LinkedHashMap<String, Integer>();
         
-        String sentence = "to be or not to be";
+        String sentence = 
+        "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
 
         String words[] = sentence.split(" ");
 
@@ -20,6 +22,6 @@ public class HashBstMain {
         }
         
 
-        wordCount.print();
+        wordCount.printLinkedHashMap();
     }
 }
