@@ -20,8 +20,9 @@ public class HashBstMain {
                 wordCount.add(word, count+1);
             }
         }
-        
-
+        wordCount.printLinkedHashMap();
+        System.out.println();
+        wordCount.remove("avoidable");
         wordCount.printLinkedHashMap();
     }
 }
