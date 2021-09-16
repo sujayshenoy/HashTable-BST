@@ -1,8 +1,6 @@
 package com.yml.hashbstmain;
 
 import com.yml.binarysearchtree.BinarySearchTree;
-import com.yml.hashmap.HashMap;
-import com.yml.hashmap.LinkedHashMap;
 
 public class HashBstMain {
     public static void main(String args[]) {
@@ -11,6 +9,7 @@ public class HashBstMain {
         bst.add(56);
         bst.add(30);
         bst.add(70);
+        System.out.println("Size of the tree : "+bst.size());
 
         bst.print();
     }

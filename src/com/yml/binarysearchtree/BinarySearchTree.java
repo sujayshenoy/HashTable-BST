@@ -1,25 +1,34 @@
 package com.yml.binarysearchtree;
 
 public class BinarySearchTree<T extends Comparable<T>> {
-    BinaryNode<T> root;
+    private BinaryNode<T> root;
+    private int size;
 
-    public void addToTree(BinaryNode<T> node, T data) {
+    public BinarySearchTree(){
+        root = null;
+        size = 0;
+    }
+
+    private void addToTree(BinaryNode<T> node, T data) {
         BinaryNode<T> newNode = new BinaryNode<T>(data);
 
         if (root == null) {
             root = newNode;
+            size++;
             return;
         }
 
         if (newNode.compareTo(node) > 0) {
             if (node.getRight() == null) {
                 node.setRight(newNode);
+                size++;
             } else {
                 addToTree(node.getRight(), data);
             }
         } else {
             if (node.getLeft() == null) {
                 node.setLeft(newNode);
+                size++;
             } else {
                 addToTree(node.getLeft(), data);
             }
@@ -30,7 +39,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
         addToTree(root, data);
     }
 
-    public void inOrderPrint(BinaryNode<T> node) {
+    private void inOrderPrint(BinaryNode<T> node) {
         if (node == null)
             return;
 
@@ -49,6 +58,10 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
     public BinaryNode<T> getRoot() {
         return root;
+    }
+
+    public int size() {
+        return size;
     }
 
 }
