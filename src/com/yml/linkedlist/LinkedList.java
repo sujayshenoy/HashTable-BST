@@ -2,6 +2,8 @@ package com.yml.linkedlist;
 
 import java.util.Iterator;
 
+import com.yml.hashmap.MyMapNode;
+
 public class LinkedList<T> implements Iterable<Node<T>> {
     private Node<T> head;
     private int size;
@@ -68,6 +70,34 @@ public class LinkedList<T> implements Iterable<Node<T>> {
         }
         System.out.println();
     }
+
+    public boolean remove(T data) {
+		Node<T> tempNode = head;
+		Node<T> prev = null;
+		boolean isFound = false;
+		if(tempNode != null && tempNode.getData().equals(data)) {
+			head = tempNode.getNext();
+			return true;
+			
+		}
+		while(tempNode != null) {
+			if(tempNode.getData().equals(data)) {
+				isFound = true;
+				break;
+			}
+			prev = tempNode;
+			tempNode = tempNode.getNext();
+		}
+		if(isFound) {
+			prev.setNext(tempNode.getNext());
+			System.out.println("Element removed");
+			return isFound;
+		}
+		else {
+			System.out.println("Element not found");
+			return isFound;
+		}
+	}
 
     @Override
     public Iterator<Node<T>> iterator() {
